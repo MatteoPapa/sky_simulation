@@ -1,0 +1,5 @@
+.idea/
+*.whel
+*.whl
+kafka/myenv/
+_mosquitto/myenv/

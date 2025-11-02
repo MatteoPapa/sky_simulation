@@ -1,0 +1,29 @@
+{
+  "name": "many_collisions",
+  "broker_ip": "127.0.0.1",
+  "spawn_delay_s": 0.10,
+  "defaults": {
+    "uav_type": "1",
+    "altitude": 120,
+    "speed": 20,
+    "direction": 90,
+    "vertical_speed": 0
+  },
+  "drones": [
+    { "uav_id": "uav-01", "latitude": 45.4680,   "longitude": 9.1925,   "direction": 180, "speed": 20 },
+    { "uav_id": "uav-02", "latitude": 45.4604,   "longitude": 9.1925,   "direction": 0,   "speed": 20 },
+    { "uav_id": "uav-03", "latitude": 45.4642,   "longitude": 9.2000,   "direction": 270, "speed": 20 },
+    { "uav_id": "uav-04", "latitude": 45.4642,   "longitude": 9.1849,   "direction": 90,  "speed": 20 },
+
+    { "uav_id": "uav-05", "latitude": 45.4670,   "longitude": 9.1960,   "direction": 225, "speed": 20 },
+    { "uav_id": "uav-06", "latitude": 45.4670,   "longitude": 9.1890,   "direction": 135, "speed": 20 },
+    { "uav_id": "uav-07", "latitude": 45.4614,   "longitude": 9.1960,   "direction": 315, "speed": 20 },
+    { "uav_id": "uav-08", "latitude": 45.4614,   "longitude": 9.1890,   "direction": 45,  "speed": 20 },
+
+    { "uav_id": "uav-09", "latitude": 45.4680,   "longitude": 9.1946,   "direction": 200, "speed": 20 },
+    { "uav_id": "uav-10","latitude": 45.4665,   "longitude": 9.2000,   "direction": 250, "speed": 20 },
+    { "uav_id": "uav-12","latitude": 45.4604,   "longitude": 9.1946,   "direction": 340, "speed": 20 },
+    { "uav_id": "uav-13","latitude": 45.4604,   "longitude": 9.1904,   "direction": 20,  "speed": 20 },
+    { "uav_id": "uav-15","latitude": 45.4665,   "longitude": 9.1849,   "direction": 110, "speed": 20 }
+  ]
+}

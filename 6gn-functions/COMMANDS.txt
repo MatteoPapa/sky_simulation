@@ -1,0 +1,31 @@
+# 1) rete dedicata (così i container si vedono per nome)
+docker network create tinyfaas-net || true
+
+# 2) Redpanda con listener interno (per i container) e esterno (per l'host)
+docker run -d --pull=always --rm \
+  --name redpanda \
+  --network tinyfaas-net \
+  -p 9092:9092 \
+  -p 9644:9644 \
+  redpandadata/redpanda:latest \
+  redpanda start \
+    --overprovisioned \
+    --smp 1 \
+    --memory 1G \
+    --reserve-memory 0M \
+    --check=false \
+    --kafka-addr "PLAINTEXT://0.0.0.0:9092,OUTSIDE://0.0.0.0:19092" \
+    --advertise-kafka-addr "PLAINTEXT://redpanda:9092,OUTSIDE://localhost:19092"
+
+#RUN MOSQUITTO
+# in an empty dir
+cat > mosquitto.conf <<'CONF'
+listener 1883 0.0.0.0
+allow_anonymous true
+CONF
+
+docker rm -f mosquitto 2>/dev/null || true
+docker run -d --name mosquitto \
+  -p 1883:1883 \
+  -v "$PWD/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro" \
+  eclipse-mosquitto:2

@@ -1,0 +1,39 @@
+1) run mongo docker container on 27017
+docker run -d \
+  --name mongo \
+  -p 27017:27017 \
+  mongo
+
+2) run mosquitto container on 1883
+
+cat > mosquitto.conf <<'CONF'
+listener 1883 0.0.0.0
+allow_anonymous true
+CONF
+
+docker rm -f mosquitto 2>/dev/null || true
+docker run -d --name mosquitto \
+  -p 1883:1883 \
+  -v "$PWD/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro" \
+  eclipse-mosquitto:2
+
+3) run tinyFaas script with "make start" inside ./tinyFaaS
+inside tinyFaaS/scripts run
+
+./upload.sh ../../6gn-functions/update update python3 1
+./upload.sh ../../6gn-functions/trigger trigger python3 1
+./upload.sh ../../6gn-functions/collision-detector collisiondetector python3 1
+./upload.sh ../../6gn-functions/mutate mutate python3 1
+./upload.sh ../../6gn-functions/release release python3 1
+(docker containers will be created for each function)
+
+4) run the ingester in 6gn-ingester (go run main.go)
+
+5) activating the env from sky_viewer (make it if you don't have with requirements.txt) 
+in sky_viewer/viz run
+
+uvicorn server:app --reload --host 0.0.0.0 --port 8051
+
+6) run scenario (choose which one):
+
+python3 -m skybed.scenario_runner ./scenarios/many_collisions.json  

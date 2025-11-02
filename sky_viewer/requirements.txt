@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]>=0.30
+typer
+pydantic>=2
+geopy
+paho-mqtt>=1.6

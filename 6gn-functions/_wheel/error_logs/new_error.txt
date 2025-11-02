@@ -1,0 +1,120 @@
+34.58 Downloading zipp-3.19.2-py3-none-any.whl (9.0 kB)
+34.61 Downloading protobuf-4.25.3-py3-none-any.whl (156 kB)
+34.62    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 156.5/156.5 kB 37.2 MB/s eta 0:00:00
+34.70 Building wheels for collected packages: grpcio, confluent_kafka
+34.71   Building wheel for grpcio (setup.py): started
+95.84   Building wheel for grpcio (setup.py): still running...
+156.4   Building wheel for grpcio (setup.py): still running...
+216.8   Building wheel for grpcio (setup.py): still running...
+283.5   Building wheel for grpcio (setup.py): still running...
+346.2   Building wheel for grpcio (setup.py): still running...
+414.5   Building wheel for grpcio (setup.py): still running...
+478.9   Building wheel for grpcio (setup.py): still running...
+546.8   Building wheel for grpcio (setup.py): still running...
+608.6   Building wheel for grpcio (setup.py): still running...
+669.0   Building wheel for grpcio (setup.py): still running...
+730.5   Building wheel for grpcio (setup.py): still running...
+792.4   Building wheel for grpcio (setup.py): still running...
+855.6   Building wheel for grpcio (setup.py): still running...
+917.4   Building wheel for grpcio (setup.py): still running...
+981.6   Building wheel for grpcio (setup.py): still running...
+1046.1   Building wheel for grpcio (setup.py): still running...
+1107.6   Building wheel for grpcio (setup.py): still running...
+1173.8   Building wheel for grpcio (setup.py): still running...
+1236.1   Building wheel for grpcio (setup.py): still running...
+1298.3   Building wheel for grpcio (setup.py): still running...
+1367.9   Building wheel for grpcio (setup.py): still running...
+1429.3   Building wheel for grpcio (setup.py): still running...
+1496.1   Building wheel for grpcio (setup.py): still running...
+1560.3   Building wheel for grpcio (setup.py): still running...
+3600.0   Building wheel for grpcio (setup.py): finished with status 'done'
+3600.9   Created wheel for grpcio: filename=grpcio-1.64.1-cp311-cp311-linux_aarch64.whl size=112204490 sha256=1c3e24e245e1fc0e5c897e7aa958654e24a783fd16d7
+040c4aede636b392ffa5
+3600.9   Stored in directory: /tmp/pip-ephem-wheel-cache-3b8jas7g/wheels/2c/2c/2b/2ba331aac32fedb0c5915347ecd15c39f180c10b3928283c6b
+3600.9   Building wheel for confluent_kafka (setup.py): started
+3602.9   Building wheel for confluent_kafka (setup.py): finished with status 'error'
+3603.0   error: subprocess-exited-with-error
+3603.0
+3603.0   × python setup.py bdist_wheel did not run successfully.
+3603.0   │ exit code: 1
+3603.0   ╰─> [64 lines of output]
+3603.0       running bdist_wheel
+3603.0       running build
+3603.0       running build_py
+3603.0       creating build
+3603.0       creating build/lib.linux-aarch64-cpython-311
+3603.0       creating build/lib.linux-aarch64-cpython-311/confluent_kafka
+3603.0       copying src/confluent_kafka/error.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka
+3603.0       copying src/confluent_kafka/serializing_producer.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka
+3603.0       copying src/confluent_kafka/__init__.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka
+3603.0       copying src/confluent_kafka/deserializing_consumer.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka
+3603.0       creating build/lib.linux-aarch64-cpython-311/confluent_kafka/kafkatest
+3603.0       copying src/confluent_kafka/kafkatest/verifiable_producer.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/kafkatest
+3603.0       copying src/confluent_kafka/kafkatest/verifiable_client.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/kafkatest
+3603.0       copying src/confluent_kafka/kafkatest/verifiable_consumer.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/kafkatest
+3603.0       copying src/confluent_kafka/kafkatest/__init__.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/kafkatest
+3603.0       creating build/lib.linux-aarch64-cpython-311/confluent_kafka/avro
+3603.0       copying src/confluent_kafka/avro/error.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/avro
+3603.0       copying src/confluent_kafka/avro/load.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/avro
+3603.0       copying src/confluent_kafka/avro/cached_schema_registry_client.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/avro
+3603.0       copying src/confluent_kafka/avro/__init__.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/avro
+3603.0       creating build/lib.linux-aarch64-cpython-311/confluent_kafka/admin
+3603.0       copying src/confluent_kafka/admin/_config.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/admin
+3603.0       copying src/confluent_kafka/admin/_group.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/admin
+3603.0       copying src/confluent_kafka/admin/_resource.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/admin
+3603.0       copying src/confluent_kafka/admin/_scram.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/admin
+3603.0       copying src/confluent_kafka/admin/_listoffsets.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/admin
+3603.0       copying src/confluent_kafka/admin/_topic.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/admin
+3603.0       copying src/confluent_kafka/admin/_metadata.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/admin
+3603.0       copying src/confluent_kafka/admin/__init__.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/admin
+3603.0       copying src/confluent_kafka/admin/_acl.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/admin
+3603.0       copying src/confluent_kafka/admin/_cluster.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/admin
+3603.0       creating build/lib.linux-aarch64-cpython-311/confluent_kafka/_model
+3603.0       copying src/confluent_kafka/_model/__init__.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/_model
+3603.0       creating build/lib.linux-aarch64-cpython-311/confluent_kafka/schema_registry
+3603.0       copying src/confluent_kafka/schema_registry/schema_registry_client.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/schema_registry
+3603.0       copying src/confluent_kafka/schema_registry/error.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/schema_registry
+3603.0       copying src/confluent_kafka/schema_registry/json_schema.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/schema_registry
+3603.0       copying src/confluent_kafka/schema_registry/protobuf.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/schema_registry
+3603.0       copying src/confluent_kafka/schema_registry/__init__.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/schema_registry
+3603.0       creating build/lib.linux-aarch64-cpython-311/confluent_kafka/_util
+3603.0       copying src/confluent_kafka/_util/conversion_util.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/_util
+3603.0       copying src/confluent_kafka/_util/__init__.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/_util
+3603.0       copying src/confluent_kafka/_util/validation_util.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/_util
+3603.0       creating build/lib.linux-aarch64-cpython-311/confluent_kafka/serialization
+3603.0       copying src/confluent_kafka/serialization/__init__.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/serialization
+3603.0       creating build/lib.linux-aarch64-cpython-311/confluent_kafka/avro/serializer
+3603.0       copying src/confluent_kafka/avro/serializer/message_serializer.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/avro/serializer
+3603.0       copying src/confluent_kafka/avro/serializer/__init__.py -> build/lib.linux-aarch64-cpython-311/confluent_kafka/avro/serializer
+3603.0       running build_ext
+3603.0       building 'confluent_kafka.cimpl' extension
+3603.0       creating build/temp.linux-aarch64-cpython-311
+3603.0       creating build/temp.linux-aarch64-cpython-311/tmp
+3603.0       creating build/temp.linux-aarch64-cpython-311/tmp/pip-install-w4u28zpz
+3603.0       creating build/temp.linux-aarch64-cpython-311/tmp/pip-install-w4u28zpz/confluent-kafka_7a65aa307e3f423e8a24c56042797132
+3603.0       creating build/temp.linux-aarch64-cpython-311/tmp/pip-install-w4u28zpz/confluent-kafka_7a65aa307e3f423e8a24c56042797132/src
+3603.0       creating build/temp.linux-aarch64-cpython-311/tmp/pip-install-w4u28zpz/confluent-kafka_7a65aa307e3f423e8a24c56042797132/src/confluent_kafka
+3603.0       creating build/temp.linux-aarch64-cpython-311/tmp/pip-install-w4u28zpz/confluent-kafka_7a65aa307e3f423e8a24c56042797132/src/confluent_kafka/src
+3603.0       gcc -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -fPIC -I/usr/local/include/python3.11 -c /tmp/pip-install-w4u28zpz/confluent-kafka_7a65aa307e3f423e8a24c56042797132/src/confluent_kafka/src/Admin.c -o build/temp.linux-aarch64-cpython-311/tmp/pip-install-w4u28zpz/confluent-kafka_7a65aa307e3f423e8a24c56042797132/src/confluent_kafka/src/Admin.o
+3603.0       In file included from /tmp/pip-install-w4u28zpz/confluent-kafka_7a65aa307e3f423e8a24c56042797132/src/confluent_kafka/src/Admin.c:17:
+3603.0       /tmp/pip-install-w4u28zpz/confluent-kafka_7a65aa307e3f423e8a24c56042797132/src/confluent_kafka/src/confluent_kafka.h:66:2: error: #error "confluent-kafka-python requires librdkafka v2.4.0 or later. Install the latest version of librdkafka from the Confluent repositories, see http://docs.confluent.io/current/installation.html"
+3603.0          66 | #error "confluent-kafka-python requires librdkafka v2.4.0 or later. Install the latest version of librdkafka from the Confluent repositories, see http://docs.confluent.io/current/installation.html"
+3603.0             |  ^~~~~
+3603.0       error: command '/usr/bin/gcc' failed with exit code 1
+3603.0       [end of output]
+3603.0
+3603.0   note: This error originates from a subprocess, and is likely not a problem with pip.
+3603.0   ERROR: Failed building wheel for confluent_kafka
+3603.0   Running setup.py clean for confluent_kafka
+3603.9 Successfully built grpcio
+3603.9 Failed to build confluent_kafka
+3603.9 ERROR: ERROR: Failed to build installable wheels for some pyproject.toml based projects (confluent_kafka)
+------
+Dockerfile:38
+--------------------
+  37 |     # Install the Python dependencies
+  38 | >>> RUN pip install --upgrade pip && \
+  39 | >>>     pip install --no-cache-dir -r requirements.txt
+  40 |
+--------------------
+ERROR: failed to solve: process "/bin/sh -c pip install --upgrade pip &&     pip install --no-cache-dir -r requirements.txt" did not complete successfully: exit code: 1

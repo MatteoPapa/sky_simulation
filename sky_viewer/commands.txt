@@ -1,0 +1,58 @@
+
+##CREATE DOCKER NETWORK
+docker network create skybed-net
+
+### STARTING REDPANDA (lightweigth Kafka)
+docker run --pull=always -it --rm `
+  --network skybed-net --name redpanda `
+  -p 9092:9092 -p 9644:9644 `
+  redpandadata/redpanda:latest `
+  redpanda start `
+    --overprovisioned `
+    --smp 1 `
+    --memory 1G `
+    --reserve-memory 0M `
+    --check=false `
+    --kafka-addr PLAINTEXT://0.0.0.0:9092 `
+    --advertise-kafka-addr PLAINTEXT://redpanda:9092
+
+### START DRONE
+# uav-1 (Milan)
+python -m skybed.uav.main 127.0.0.1 uav-1 quad 45.4642 9.1900 120 20 90 0
+
+# uav-2 (slightly offset)
+python -m skybed.uav.main 127.0.0.1 uav-2 quad 45.4645 9.1910 120 18 85 0
+
+
+### STARTING VISUALIZER
+
+python -m uvicorn viz.server:app --reload --port 8051
+
+# START SCENARIO
+python -m skybed.scenario_runner .\scenarios\milan_5.json
+
+# START SCENARIO (leave UAVs running in background)
+python -m skybed.scenario_runner .\scenarios\milan_5.json --detach
+
+
+# RUN tinyFaaS on port 8888
+git clone https://github.com/Be-FaaS/tinyFaaS
+cd tinyFaaS
+
+docker build -t tinyfaas-mgmt ./src/
+
+docker run -d --name tinyfaas-mgmt `
+  -v /var/run/docker.sock:/var/run/docker.sock `
+  -e HTTP_PORT=8000 -e GRPC_PORT=-1 -e COAP_PORT=-1 `
+  -p 8080:8080 `
+  tinyfaas-mgmt tinyfaas-mgmt
+
+#TEST FaaS
+
+
+#RUN 6GN ingester
+export KAFKA_HOST=127.0.0.1
+export UPDATES_TOPIC=updates
+export TINYFAAS_URL=http://127.0.0.1:8888/update
+export LOG_LEVEL=debug
+go run .

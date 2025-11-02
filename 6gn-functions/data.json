@@ -1,0 +1,9 @@
+{
+  "data": [
+    {"uav_id": "001", "uav_type": "1", "latitude": 52.0, "longitude": 0.1, "altitude": 10000, "speed": 50, "direction": 90, "vertical_speed": 0},
+    {"uav_id": "002", "uav_type": "1","latitude": 52.0, "longitude": 0.2, "altitude": 10000, "speed": 50, "direction": 270, "vertical_speed": 0},
+    {"uav_id": "003", "uav_type": "1", "latitude": 55.0, "longitude": 0.15, "altitude": 10000, "speed": 50, "direction": 270, "vertical_speed": 0},
+    {"uav_id": "004", "uav_type": "1","latitude": 55.0, "longitude": 0.25, "altitude": 10000, "speed": 50, "direction": 90, "vertical_speed": 0}
+  ],
+  "meta": {"request_id":  "8b828a42-7bf3-4ef5-8f06-98b54f99d96b", "origin": "system/self_report","timestamp": 1234567890}
+}

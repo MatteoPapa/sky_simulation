@@ -1,0 +1,16 @@
+{
+  "name": "future_collision",
+  "broker_ip": "127.0.0.1",
+  "spawn_delay_s": 0.2,
+  "defaults": {
+    "uav_type": "1",
+    "altitude": 120,
+    "speed": 20,
+    "direction": 90,
+    "vertical_speed": 0
+  },
+  "drones": [
+    { "uav_id": "uav-A", "latitude": 45.4642, "longitude": 9.1900, "direction": 90,  "speed": 20 },
+    { "uav_id": "uav-B", "latitude": 45.4642, "longitude": 9.1950, "direction": 270, "speed": 20 }
+  ]
+}

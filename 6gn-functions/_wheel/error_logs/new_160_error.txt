@@ -1,0 +1,398 @@
+8.297   CPU                      generic                                                                                                        [356/1879]
+8.297   GEN_PKG_CONFIG           y
+8.298   MKL_APP_NAME             librdkafka
+8.298   MKL_APP_DESC_ONELINE     The Apache Kafka C/C++ library
+8.298   CC                       gcc
+8.299   CXX                      g++
+8.299   LD                       ld
+8.299   NM                       nm
+8.299   OBJDUMP                  objdump
+8.299   STRIP                    strip
+8.299   RANLIB                   ranlib
+8.300   CPPFLAGS                 -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align
+8.300   PKG_CONFIG               pkg-config
+8.300   INSTALL                  install
+8.301   LIB_LDFLAGS              -shared -Wl,-soname,$(LIBFILENAME)
+8.301   LDFLAG_LINKERSCRIPT      -Wl,--version-script=
+8.301   RDKAFKA_VERSION_STR      1.6.0
+8.302   MKL_APP_VERSION          1.6.0
+8.302   LIBS                     -llz4 -lm -lzstd -lsasl2 -lssl -lcrypto -L/lib -lz -ldl -lpthread -lrt -lpthread -lrt
+8.302   MKL_PKGCONFIG_LIBS_PRIVATE -lm -ldl -lpthread -lrt -lpthread -lrt
+8.302   MKL_PKGCONFIG_REQUIRES_PRIVATE zlib libcrypto libssl libsasl2 libzstd liblz4
+8.302   CFLAGS
+8.302   MKL_PKGCONFIG_REQUIRES   zlib libcrypto libssl libsasl2 libzstd liblz4
+8.303   CXXFLAGS                 -Wno-non-virtual-dtor
+8.303   SYMDUMPER                $(NM) -D
+8.304   MKL_DYNAMIC_LIBS         -llz4 -lm -lzstd -lsasl2 -lssl -lcrypto -lz -ldl -lpthread -lrt -lpthread -lrt
+8.304   exec_prefix              /usr/local
+8.304   bindir                   /usr/local/bin
+8.304   sbindir                  /usr/local/sbin
+8.304   libexecdir               /usr/local/libexec
+8.304   datadir                  /usr/local/share
+8.305   sysconfdir               /usr/local/etc
+8.305   sharedstatedir           /usr/local/com
+8.305   localstatedir            /usr/local/var
+8.305   runstatedir              /usr/local/var/run
+8.305   libdir                   /usr/local/lib
+8.305   includedir               /usr/local/include
+8.305   infodir                  /usr/local/info
+8.305   mandir                   /usr/local/man
+8.305   BUILT_WITH               GCC GXX PKGCONFIG GNULD LDS C11THREADS LIBDL PLUGINS ZLIB SSL SASL_CYRUS ZSTD HDRHISTOGRAM LZ4_EXT SYSLOG SNAPPY SOCKEM S
+ASL_SCRAM SASL_OAUTHBEARER
+8.315 Generated config.cache
+8.315
+8.315 Now type 'make' to build
+8.332 make[1]: Entering directory '/app/librdkafka-1.6.0/src'
+8.447 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka.c -o rdkafka.o
+20.25 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_broker.c -o rdkafka_broker.o
+24.20 In file included from rd.h:73,
+24.20                  from rdkafka_broker.c:51:
+24.20 rdkafka_broker.c: In function 'rd_kafka_broker_bufq_timeout_scan':
+24.20 rdkafka_broker.c:777:45: warning: 'Request with timeout in ' directive output may be truncated writing 24 bytes into a region of size between 21 and
+ 93 [-Wformat-truncation=]                                                                                                                      [305/1879]
+24.20   777 |                                             ": possibly held back by "
+24.20       |                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~
+24.20 rdposix.h:87:36: note: in definition of macro 'rd_snprintf'
+24.20    87 | #define rd_snprintf(...)  snprintf(__VA_ARGS__)
+24.20       |                                    ^~~~~~~~~~~
+24.20 rdkafka_broker.c:777:45: note: using the range [-2147483648, 2147483647] for directive argument
+24.20   777 |                                             ": possibly held back by "
+24.20       |                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~
+24.20 rdposix.h:87:36: note: in definition of macro 'rd_snprintf'
+24.20    87 | #define rd_snprintf(...)  snprintf(__VA_ARGS__)
+24.20       |                                    ^~~~~~~~~~~
+24.20 rdposix.h:87:27: note: 'snprintf' output between 63 and 145 bytes into a destination of size 128
+24.20    87 | #define rd_snprintf(...)  snprintf(__VA_ARGS__)
+24.20       |                           ^~~~~~~~~~~~~~~~~~~~~
+24.20 rdkafka_broker.c:776:33: note: in expansion of macro 'rd_snprintf'
+24.20   776 |                                 rd_snprintf(holbstr, sizeof(holbstr),
+24.20       |                                 ^~~~~~~~~~~
+34.19 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_msg.c -o rdkafka_msg.o
+38.70 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_topic.c -o rdkafka_topic.o
+41.84 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_conf.c -o rdkafka_conf.o
+46.24 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_timer.c -o rdkafka_timer.o
+47.40 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_offset.c -o rdkafka_offset.o
+49.58 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_transport.c -o rdkafka_transport.o
+51.30 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_buf.c -o rdkafka_buf.o
+53.07 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_queue.c -o rdkafka_queue.o
+56.19 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_op.c -o rdkafka_op.o
+58.07 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_request.c -o rdkafka_request.o
+75.63 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_cgrp.c -o rdkafka_cgrp.o
+88.23 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_pattern.c -o rdkafka_pattern.o
+89.19 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_partition.c -o rdkafka_partition.o
+95.96 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_subscription.c -o rdkafka_subscription.o
+96.89 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_assignment.c -o rdkafka_assignment.o
+98.45 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_assignor.c -o rdkafka_assignor.o
+101.1 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_range_assignor.c -o rdkafka_range_assignor.o
+101.9 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_roundrobin_assignor.c -o rdkafka_roundrobin_ass
+ignor.o
+102.7 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_sticky_assignor.c -o rdkafka_sticky_assignor.o
+107.8 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_feature.c -o rdkafka_feature.o
+108.8 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdcrc32.c -o rdcrc32.o
+109.0 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c crc32c.c -o crc32c.o
+109.3 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdmurmur2.c -o rdmurmur2.o
+113.2 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_event.c -o rdkafka_event.o           [255/1879]
+114.3 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_metadata.c -o rdkafka_metadata.o
+120.6 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdregex.c -o rdregex.o
+120.8 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdports.c -o rdports.o
+121.0 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_metadata_cache.c -o rdkafka_metadata_cache.o
+122.9 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdavl.c -o rdavl.o
+123.7 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_sasl.c -o rdkafka_sasl.o
+124.9 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_sasl_plain.c -o rdkafka_sasl_plain.o
+125.8 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_interceptor.c -o rdkafka_interceptor.o
+127.3 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_msgset_writer.c -o rdkafka_msgset_writer.o
+130.8 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_msgset_reader.c -o rdkafka_msgset_reader.o
+138.0 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_header.c -o rdkafka_header.o
+138.9 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_admin.c -o rdkafka_admin.o
+151.3 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_aux.c -o rdkafka_aux.o
+152.2 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_background.c -o rdkafka_background.o
+153.2 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_idempotence.c -o rdkafka_idempotence.o
+154.7 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_cert.c -o rdkafka_cert.o
+155.3 rdkafka_cert.c: In function 'rd_kafka_print_ssl_errors':
+155.3 rdkafka_cert.c:113:9: warning: 'ERR_get_error_line_data' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+155.3   113 |         while ((l = ERR_get_error_line_data(&file, &line,
+155.3       |         ^~~~~
+155.3 In file included from rdkafka_transport_int.h:38,
+155.3                  from rdkafka_cert.c:36:
+155.3 /usr/include/openssl/err.h:425:15: note: declared here
+155.3   425 | unsigned long ERR_get_error_line_data(const char **file, int *line,
+155.3       |               ^~~~~~~~~~~~~~~~~~~~~~~
+155.3 rdkafka_cert.c:124:24: warning: 'ERR_func_error_string' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+155.3   124 |                        ERR_func_error_string(l),
+155.3       |                        ^~~~~~~~~~~~~~~~~~~~~
+155.3 /usr/include/openssl/err.h:459:35: note: declared here
+155.3   459 | OSSL_DEPRECATEDIN_3_0 const char *ERR_func_error_string(unsigned long e);
+155.3       |                                   ^~~~~~~~~~~~~~~~~~~~~
+155.8 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_txnmgr.c -o rdkafka_txnmgr.o
+162.5 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_coord.c -o rdkafka_coord.o
+164.8 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdvarint.c -o rdvarint.o
+165.3 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdbuf.c -o rdbuf.o
+168.3 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdmap.c -o rdmap.o
+169.4 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdunittest.c -o rdunittest.o
+170.3 In file included from rdunittest.c:34:
+170.3 In function 'ut_tq_test',
+170.3     inlined from 'unittest_sysqueue' at rdunittest.c:367:26:
+170.3 rdunittest.c:202:36: warning: 'tqh' may be used uninitialized [-Wmaybe-uninitialized]
+170.3   202 |         RD_UT_ASSERT(TAILQ_LAST(tqh[0], ut_tq_head)->v == args->exp[totcnt-1],
+170.3 rdunittest.h:78:15: note: in definition of macro 'RD_UT_ASSERT'
+170.3    78 |         if (!(expr)) {                                                  \
+170.3       |               ^~~~
+170.3 rdunittest.c:202:22: note: in expansion of macro 'TAILQ_LAST'
+170.3   202 |         RD_UT_ASSERT(TAILQ_LAST(tqh[0], ut_tq_head)->v == args->exp[totcnt-1],
+170.3       |                      ^~~~~~~~~~
+170.3 rdunittest.c: In function 'unittest_sysqueue':
+170.3 rdunittest.c:151:28: note: 'tqh' declared here
+170.3   151 |         struct ut_tq_head *tqh[3];                                                                                                [204/1879]
+170.3       |                            ^~~
+170.8 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_mock.c -o rdkafka_mock.o
+175.4 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_mock_handlers.c -o rdkafka_mock_handlers.o
+195.5 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_mock_cgrp.c -o rdkafka_mock_cgrp.o
+198.0 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_error.c -o rdkafka_error.o
+198.9 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_sasl_cyrus.c -o rdkafka_sasl_cyrus.o
+200.4 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_sasl_scram.c -o rdkafka_sasl_scram.o
+202.1 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_sasl_oauthbearer.c -o rdkafka_sasl_oauthbearer.
+o
+205.1 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c snappy.c -o snappy.o
+207.5 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdgz.c -o rdgz.o
+207.7 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_zstd.c -o rdkafka_zstd.o
+208.7 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdhdrhistogram.c -o rdhdrhistogram.o
+210.3 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_ssl.c -o rdkafka_ssl.o
+210.9 rdkafka_ssl.c: In function 'rd_kafka_ssl_last_error_str':
+210.9 rdkafka_ssl.c:104:9: warning: 'ERR_peek_last_error_line_data' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+210.9   104 |         l = ERR_peek_last_error_line_data(&file, &line,
+210.9       |         ^
+210.9 In file included from rdkafka_transport_int.h:38,
+210.9                  from rdkafka_ssl.c:36:
+210.9 /usr/include/openssl/err.h:449:15: note: declared here
+210.9   449 | unsigned long ERR_peek_last_error_line_data(const char **file, int *line,
+210.9       |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+210.9 rdkafka_ssl.c:109:9: warning: 'ERR_func_error_string' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+210.9   109 |         rd_snprintf(errstr, sizeof(errstr),
+210.9       |         ^~~~~~~~~~~
+210.9 /usr/include/openssl/err.h:459:35: note: declared here
+210.9   459 | OSSL_DEPRECATEDIN_3_0 const char *ERR_func_error_string(unsigned long e);
+210.9       |                                   ^~~~~~~~~~~~~~~~~~~~~
+210.9 rdkafka_ssl.c: In function 'rd_kafka_ssl_error':
+210.9 rdkafka_ssl.c:138:9: warning: 'ERR_get_error_line_data' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+210.9   138 |         while ((l = ERR_get_error_line_data(&file, &line,
+210.9       |         ^~~~~
+210.9 /usr/include/openssl/err.h:425:15: note: declared here
+210.9   425 | unsigned long ERR_get_error_line_data(const char **file, int *line,
+210.9       |               ^~~~~~~~~~~~~~~~~~~~~~~
+212.2 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_lz4.c -o rdkafka_lz4.o
+213.4 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -O3 -c rdxxhash.c -o rdxxhash.o
+216.4 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rddl.c -o rddl.o
+216.7 gcc -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align  -c rdkafka_plugin.c -o rdkafka_plugin.o
+217.5 Generating linker script librdkafka.lds from rdkafka.h rdkafka_mock.h
+217.9 Creating shared library librdkafka.so.1
+217.9 gcc  -shared -Wl,-soname,librdkafka.so.1 -Wl,--version-script=librdkafka.lds rdkafka.o rdkafka_broker.o rdkafka_msg.o rdkafka_topic.o rdkafka_conf.o
+ rdkafka_timer.o rdkafka_offset.o rdkafka_transport.o rdkafka_buf.o rdkafka_queue.o rdkafka_op.o rdkafka_request.o rdkafka_cgrp.o rdkafka_pattern.o rdkafk
+a_partition.o rdkafka_subscription.o rdkafka_assignment.o rdkafka_assignor.o rdkafka_range_assignor.o rdkafka_roundrobin_assignor.o rdkafka_sticky_assigno
+r.o rdkafka_feature.o rdcrc32.o crc32c.o rdmurmur2.o rdfnv1a.o rdaddr.o rdrand.o rdlist.o tinycthread.o tinycthread_extra.o rdlog.o rdstring.o rdkafka_eve
+nt.o rdkafka_metadata.o rdregex.o rdports.o rdkafka_metadata_cache.o rdavl.o rdkafka_sasl.o rdkafka_sasl_plain.o rdkafka_interceptor.o rdkafka_msgset_writ
+er.o rdkafka_msgset_reader.o rdkafka_header.o rdkafka_admin.o rdkafka_aux.o rdkafka_background.o rdkafka_idempotence.o rdkafka_cert.o rdkafka_txnmgr.o rdk
+afka_coord.o rdvarint.o rdbuf.o rdmap.o rdunittest.o rdkafka_mock.o rdkafka_mock_handlers.o rdkafka_mock_cgrp.o rdkafka_error.o rdkafka_sasl_cyrus.o rdkaf
+ka_sasl_scram.o rdkafka_sasl_oauthbearer.o snappy.o rdgz.o rdkafka_zstd.o rdhdrhistogram.o rdkafka_ssl.o rdkafka_lz4.o rdxxhash.o rddl.o rdkafka_plugin.o
+-o librdkafka.so.1 -llz4 -lm -lzstd -lsasl2 -lssl -lcrypto -L/lib -lz -ldl -lpthread -lrt -lpthread -lrt                                        [153/1879]
+218.4 Creating static library librdkafka.a
+218.4 ar rcs librdkafka.a rdkafka.o rdkafka_broker.o rdkafka_msg.o rdkafka_topic.o rdkafka_conf.o rdkafka_timer.o rdkafka_offset.o rdkafka_transport.o rdk
+afka_buf.o rdkafka_queue.o rdkafka_op.o rdkafka_request.o rdkafka_cgrp.o rdkafka_pattern.o rdkafka_partition.o rdkafka_subscription.o rdkafka_assignment.o
+ rdkafka_assignor.o rdkafka_range_assignor.o rdkafka_roundrobin_assignor.o rdkafka_sticky_assignor.o rdkafka_feature.o rdcrc32.o crc32c.o rdmurmur2.o rdfn
+v1a.o rdaddr.o rdrand.o rdlist.o tinycthread.o tinycthread_extra.o rdlog.o rdstring.o rdkafka_event.o rdkafka_metadata.o rdregex.o rdports.o rdkafka_metad
+ata_cache.o rdavl.o rdkafka_sasl.o rdkafka_sasl_plain.o rdkafka_interceptor.o rdkafka_msgset_writer.o rdkafka_msgset_reader.o rdkafka_header.o rdkafka_adm
+in.o rdkafka_aux.o rdkafka_background.o rdkafka_idempotence.o rdkafka_cert.o rdkafka_txnmgr.o rdkafka_coord.o rdvarint.o rdbuf.o rdmap.o rdunittest.o rdka
+fka_mock.o rdkafka_mock_handlers.o rdkafka_mock_cgrp.o rdkafka_error.o rdkafka_sasl_cyrus.o rdkafka_sasl_scram.o rdkafka_sasl_oauthbearer.o snappy.o rdgz.
+o rdkafka_zstd.o rdhdrhistogram.o rdkafka_ssl.o rdkafka_lz4.o rdxxhash.o rddl.o rdkafka_plugin.o
+218.6 WARNING: librdkafka-static.a: Not creating self-contained static library librdkafka-static.a: no static libraries available/enabled
+218.6 Creating librdkafka.so symlink
+218.6 rm -f "librdkafka.so" && ln -s "librdkafka.so.1" "librdkafka.so"
+218.6 Generating pkg-config file rdkafka.pc
+218.6 Generating pkg-config file rdkafka-static.pc
+218.6 Checking librdkafka integrity
+218.6 librdkafka.so.1                OK
+218.6 librdkafka.a                   OK
+218.6 Symbol visibility              OK
+218.7 make[1]: Leaving directory '/app/librdkafka-1.6.0/src'
+218.7 make[1]: Entering directory '/app/librdkafka-1.6.0/src-cpp'
+218.7 g++ -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align -Wno-non-virtual-dtor -c RdKafka.cpp -o RdKafka.o
+220.8 g++ -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align -Wno-non-virtual-dtor -c ConfImpl.cpp -o ConfImpl.o
+224.3 g++ -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align -Wno-non-virtual-dtor -c HandleImpl.cpp -o HandleImpl.o
+230.1 g++ -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align -Wno-non-virtual-dtor -c ConsumerImpl.cpp -o ConsumerImpl.o
+234.6 g++ -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align -Wno-non-virtual-dtor -c ProducerImpl.cpp -o ProducerImpl.o
+239.4 g++ -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align -Wno-non-virtual-dtor -c KafkaConsumerImpl.cpp -o KafkaCons
+umerImpl.o
+245.3 g++ -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align -Wno-non-virtual-dtor -c TopicImpl.cpp -o TopicImpl.o
+247.7 g++ -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align -Wno-non-virtual-dtor -c TopicPartitionImpl.cpp -o TopicPar
+titionImpl.o
+250.0 g++ -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align -Wno-non-virtual-dtor -c MessageImpl.cpp -o MessageImpl.o
+251.9 g++ -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align -Wno-non-virtual-dtor -c HeadersImpl.cpp -o HeadersImpl.o
+255.0 g++ -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align -Wno-non-virtual-dtor -c QueueImpl.cpp -o QueueImpl.o
+258.5 g++ -MD -MP -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align -Wno-non-virtual-dtor -c MetadataImpl.cpp -o MetadataImpl.o
+262.8 Creating shared library librdkafka++.so.1
+262.8 g++  -shared -Wl,-soname,librdkafka++.so.1 RdKafka.o ConfImpl.o HandleImpl.o ConsumerImpl.o ProducerImpl.o KafkaConsumerImpl.o TopicImpl.o TopicPart
+itionImpl.o MessageImpl.o HeadersImpl.o QueueImpl.o MetadataImpl.o -o librdkafka++.so.1 -L../src -lrdkafka
+263.0 Creating static library librdkafka++.a
+263.0 ar rcs librdkafka++.a RdKafka.o ConfImpl.o HandleImpl.o ConsumerImpl.o ProducerImpl.o KafkaConsumerImpl.o TopicImpl.o TopicPartitionImpl.o MessageIm
+pl.o HeadersImpl.o QueueImpl.o MetadataImpl.o
+263.1 Creating librdkafka++.so symlink
+263.1 rm -f "librdkafka++.so" && ln -s "librdkafka++.so.1" "librdkafka++.so"
+263.1 Generating pkg-config file rdkafka++.pc
+263.1 Generating pkg-config file rdkafka++-static.pc
+263.1 Checking librdkafka++ integrity
+263.1 librdkafka++.so.1              OK
+263.1 librdkafka++.a                 OK
+263.1 make[1]: Leaving directory '/app/librdkafka-1.6.0/src-cpp'
+263.1 make -C examples
+263.1 make[1]: Entering directory '/app/librdkafka-1.6.0/examples'
+263.1 gcc -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align -I../src rdkafka_example.c -o rdkafka_example  \         [102/1879]
+263.1   ../src/librdkafka.a -llz4 -lm -lzstd -lsasl2 -lssl -lcrypto -L/lib -lz -ldl -lpthread -lrt -lpthread -lrt
+264.8 # rdkafka_example is ready
+264.8 #
+264.8 # Run producer (write messages on stdin)
+264.8 ./rdkafka_example -P -t <topic> -p <partition>
+264.8
+264.8 # or consumer
+264.8 ./rdkafka_example -C -t <topic> -p <partition>
+264.8
+264.8 #
+264.8 # More usage options:
+264.8 ./rdkafka_example -h
+264.8 gcc -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align -I../src rdkafka_performance.c -o rdkafka_performance  \
+264.8   ../src/librdkafka.a -llz4 -lm -lzstd -lsasl2 -lssl -lcrypto -L/lib -lz -ldl -lpthread -lrt -lpthread -lrt
+267.8 # rdkafka_performance is ready
+267.8 #
+267.8 # Run producer
+267.8 ./rdkafka_performance -P -t <topic> -p <partition> -s <msgsize>
+267.8
+267.8 # or consumer
+267.8 ./rdkafka_performance -C -t <topic> -p <partition>
+267.8
+267.8 #
+267.8 # More usage options:
+267.8 ./rdkafka_performance -h
+267.8 g++ -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align -Wno-non-virtual-dtor -I../src-cpp rdkafka_example.cpp -o rdkafka_e
+xample_cpp  \
+267.8   ../src-cpp/librdkafka++.a ../src/librdkafka.a -llz4 -lm -lzstd -lsasl2 -lssl -lcrypto -L/lib -lz -ldl -lpthread -lrt -lpthread -lrt
+273.8 gcc -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align -I../src rdkafka_complex_consumer_example.c -o rdkafka_complex_cons
+umer_example  \
+273.8   ../src/librdkafka.a -llz4 -lm -lzstd -lsasl2 -lssl -lcrypto -L/lib -lz -ldl -lpthread -lrt -lpthread -lrt
+275.2 # rdkafka_complex_consumer_example is ready
+275.2 #
+275.2 ./rdkafka_complex_consumer_example <topic[:part]> <topic2[:part]> ..
+275.2
+275.2 #
+275.2 # More usage options:
+275.2 ./rdkafka_complex_consumer_example -h
+275.2 g++ -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align -Wno-non-virtual-dtor -I../src-cpp rdkafka_complex_consumer_example
+.cpp -o rdkafka_complex_consumer_example_cpp  \
+275.2   ../src-cpp/librdkafka++.a ../src/librdkafka.a -llz4 -lm -lzstd -lsasl2 -lssl -lcrypto -L/lib -lz -ldl -lpthread -lrt -lpthread -lrt
+280.4 g++ -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align -Wno-non-virtual-dtor -I../src-cpp kafkatest_verifiable_client.cpp
+-o kafkatest_verifiable_client  \
+280.4   ../src-cpp/librdkafka++.a ../src/librdkafka.a -llz4 -lm -lzstd -lsasl2 -lssl -lcrypto -L/lib -lz -ldl -lpthread -lrt -lpthread -lrt
+291.7 gcc -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align -I../src producer.c -o producer  \
+291.7   ../src/librdkafka.a -llz4 -lm -lzstd -lsasl2 -lssl -lcrypto -L/lib -lz -ldl -lpthread -lrt -lpthread -lrt
+292.4 gcc -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align -I../src consumer.c -o consumer  \
+292.4   ../src/librdkafka.a -llz4 -lm -lzstd -lsasl2 -lssl -lcrypto -L/lib -lz -ldl -lpthread -lrt -lpthread -lrt
+293.1 gcc -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align -I../src idempotent_producer.c -o idempotent_producer  \
+293.1   ../src/librdkafka.a -llz4 -lm -lzstd -lsasl2 -lssl -lcrypto -L/lib -lz -ldl -lpthread -lrt -lpthread -lrt
+293.9 gcc -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align -I../src transactions.c -o transactions  \                [51/1879]
+293.9   ../src/librdkafka.a -llz4 -lm -lzstd -lsasl2 -lssl -lcrypto -L/lib -lz -ldl -lpthread -lrt -lpthread -lrt
+295.0 gcc -g -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointer-arith -Wcast-align -I../src delete_records.c -o delete_records  \
+295.0   ../src/librdkafka.a -llz4 -lm -lzstd -lsasl2 -lssl -lcrypto -L/lib -lz -ldl -lpthread -lrt -lpthread -lrt
+295.8 make[1]: Leaving directory '/app/librdkafka-1.6.0/examples'
+295.8 Updating CONFIGURATION.md
+295.9 Checking  integrity
+295.9 CONFIGURATION.md               OK
+295.9 examples/rdkafka_example       OK
+295.9 examples/rdkafka_performance   OK
+295.9 examples/rdkafka_example_cpp   OK
+295.9 make[1]: Entering directory '/app/librdkafka-1.6.0/src'
+296.0 WARNING: librdkafka-static.a: Not creating self-contained static library librdkafka-static.a: no static libraries available/enabled
+296.0 Generating pkg-config file rdkafka-static.pc
+296.0 Checking librdkafka integrity
+296.0 librdkafka.so.1                OK
+296.0 librdkafka.a                   OK
+296.0 Symbol visibility              OK
+296.1 make[1]: Leaving directory '/app/librdkafka-1.6.0/src'
+296.1 make[1]: Entering directory '/app/librdkafka-1.6.0/src-cpp'
+296.1 Generating pkg-config file rdkafka++-static.pc
+296.1 Checking librdkafka++ integrity
+296.1 librdkafka++.so.1              OK
+296.1 librdkafka++.a                 OK
+296.2 make[1]: Leaving directory '/app/librdkafka-1.6.0/src-cpp'
+296.2 make[1]: Entering directory '/app/librdkafka-1.6.0/src'
+296.3 Install librdkafka to /usr/local
+296.3 install -d $DESTDIR/usr/local/include/librdkafka
+296.3 install -d $DESTDIR/usr/local/lib
+296.3 install rdkafka.h rdkafka_mock.h $DESTDIR/usr/local/include/librdkafka
+296.3 install librdkafka.a $DESTDIR/usr/local/lib
+296.4 [ ! -f librdkafka-static.a ] || install librdkafka-static.a $DESTDIR/usr/local/lib
+296.4 install librdkafka.so.1 $DESTDIR/usr/local/lib
+296.4 [ -f "rdkafka.pc" ] && ( \
+296.4   install -d $DESTDIR/usr/local/lib/pkgconfig && \
+296.4   install -m 0644 rdkafka.pc $DESTDIR/usr/local/lib/pkgconfig \
+296.4 )
+296.4 [ -f "rdkafka-static.pc" ] && ( \
+296.4   install -d $DESTDIR/usr/local/lib/pkgconfig && \
+296.4   install -m 0644 rdkafka-static.pc $DESTDIR/usr/local/lib/pkgconfig \
+296.4 )
+296.4 (cd $DESTDIR/usr/local/lib && ln -sf librdkafka.so.1 librdkafka.so)
+296.4 make[1]: Leaving directory '/app/librdkafka-1.6.0/src'
+296.4 make[1]: Entering directory '/app/librdkafka-1.6.0/src-cpp'
+296.4 Install librdkafka++ to /usr/local
+296.4 install -d $DESTDIR/usr/local/include/librdkafka
+296.4 install -d $DESTDIR/usr/local/lib
+296.4 install rdkafkacpp.h $DESTDIR/usr/local/include/librdkafka
+296.5 install librdkafka++.a $DESTDIR/usr/local/lib
+296.5 [ ! -f librdkafka++-static.a ] || install librdkafka++-static.a $DESTDIR/usr/local/lib
+296.5 install librdkafka++.so.1 $DESTDIR/usr/local/lib
+296.5 [ -f "rdkafka++.pc" ] && ( \                                                                                                                [0/1879]
+296.5   install -d $DESTDIR/usr/local/lib/pkgconfig && \
+296.5   install -m 0644 rdkafka++.pc $DESTDIR/usr/local/lib/pkgconfig \
+296.5 )
+296.5 [ -f "rdkafka++-static.pc" ] && ( \
+296.5   install -d $DESTDIR/usr/local/lib/pkgconfig && \
+296.5   install -m 0644 rdkafka++-static.pc $DESTDIR/usr/local/lib/pkgconfig \
+296.5 )
+296.5 (cd $DESTDIR/usr/local/lib && ln -sf librdkafka++.so.1 librdkafka++.so)
+296.5 make[1]: Leaving directory '/app/librdkafka-1.6.0/src-cpp'
+296.5 make[1]: Entering directory '/app/librdkafka-1.6.0/src'
+296.7 WARNING: librdkafka-static.a: Not creating self-contained static library librdkafka-static.a: no static libraries available/enabled
+296.7 Generating pkg-config file rdkafka-static.pc
+296.7 Checking librdkafka integrity
+296.7 librdkafka.so.1                OK
+296.7 librdkafka.a                   OK
+296.7 Symbol visibility              OK
+296.7 make[1]: Leaving directory '/app/librdkafka-1.6.0/src'
+296.7 make[1]: Entering directory '/app/librdkafka-1.6.0/src-cpp'
+296.8 Generating pkg-config file rdkafka++-static.pc
+296.8 Checking librdkafka++ integrity
+296.8 librdkafka++.so.1              OK
+296.8 librdkafka++.a                 OK
+296.8 make[1]: Leaving directory '/app/librdkafka-1.6.0/src-cpp'
+296.8 make -C examples
+296.8 make[1]: Entering directory '/app/librdkafka-1.6.0/examples'
+296.8 make[1]: Nothing to be done for 'all'.
+296.8 make[1]: Leaving directory '/app/librdkafka-1.6.0/examples'
+296.8 Updating CONFIGURATION.md
+296.9 Installing documentation to /usr/local
+296.9 install -d $DESTDIR/usr/local/share/doc/librdkafka
+296.9 install LICENSE LICENSES.txt INTRODUCTION.md README.md CONFIGURATION.md STATISTICS.md CHANGELOG.md $DESTDIR/usr/local/share/doc/librdkafka
+------
+Dockerfile:22
+--------------------
+  21 |     # Download, extract, build, and install librdkafka from source
+  22 | >>> RUN curl -L http://mirrordirector.raspbian.org/raspbian/pool/main/libr/librdkafka/librdkafka_1.6.0.orig.tar.gz -o librdkafka.tar.gz && \
+  23 | >>>     tar -xzf librdkafka.tar.gz && \
+  24 | >>>     cd librdkafka-1.6.0 && \
+  25 | >>>     ./configure && \
+  26 | >>>     make && \
+  27 | >>>     make install && \
+  28 | >>>     ldconfig && \
+  29 | >>>     cd .. && \
+  30 | >>>     rm -rf librdkafka.tar.gz librdkafka-1.6.0
+  31 |
+--------------------
+ERROR: failed to solve: process "/bin/sh -c curl -L http://mirrordirector.raspbian.org/raspbian/pool/main/libr/librdkafka/librdkafka_1.6.0.orig.tar.gz -o
+librdkafka.tar.gz &&     tar -xzf librdkafka.tar.gz &&     cd librdkafka-1.6.0 &&     ./configure &&     make &&     make install &&     ldconfig &&     c
+d .. &&     rm -rf librdkafka.tar.gz librdkafka-1.6.0" did not complete successfully: exit code: 1

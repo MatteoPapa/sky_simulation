@@ -1,0 +1,19 @@
+{
+  "name": "milan_5",
+  "broker_ip": "127.0.0.1",
+  "spawn_delay_s": 0.2,
+  "defaults": {
+    "uav_type": "quad",
+    "altitude": 120,
+    "speed": 20,
+    "direction": 90,
+    "vertical_speed": 0
+  },
+  "drones": [
+    { "uav_id": "uav-1", "latitude": 45.4642, "longitude": 9.1900, "vertical_speed" : 1 },
+    { "uav_id": "uav-2", "latitude": 45.4645, "longitude": 9.1910, "speed": 18, "direction": 85 },
+    { "uav_id": "uav-3", "latitude": 45.4650, "longitude": 9.1920 },
+    { "uav_id": "uav-4", "latitude": 45.4660, "longitude": 9.1930, "direction": 110 },
+    { "uav_id": "uav-5", "latitude": 45.4670, "longitude": 9.1940 }
+  ]
+}

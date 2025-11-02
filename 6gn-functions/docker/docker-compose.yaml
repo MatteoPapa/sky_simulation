@@ -1,0 +1,51 @@
+services:
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - mosquitto-data:/mosquitto/data
+      - mosquitto-log:/mosquitto/log
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+
+  ingester:
+    build:
+      context: ingester/ # Path to the directory containing the project and Dockerfile
+      dockerfile: Dockerfile
+    depends_on:
+      - mosquitto
+    environment:
+      - MQTT_BROKER=mosquitto:1883
+
+  mongo:
+    image: mongo:3.6.23 # rpi compatible
+    container_name: mongodb-3.6.23
+    restart: always
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongodb-data:/data/db
+
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    command: ["--log-level=debug"]
+    container_name: jaeger
+    ports:
+      - '16686:16686' # Jaeger UI
+      - '6831:6831/udp' # Jaeger agent service, which receives spans sent over UDP.
+      - '4317:4317'         # grpc
+      - '4318:4318'       # http
+      - '55680:55680'  # Jaeger collector service
+      - "14250:14250"     # For gRPC
+      - "14268:14268"     # For HTTP collector
+      - "14269:14269"     # For HTTP collector (cassandra)
+      - "9411:9411"       # For Zipkin
+    environment:
+      - COLLECTOR_ZIPKIN_HTTP_PORT=9411
+      - COLLECTOR_OTLP_ENABLED=true  # Enable OTLP on the collector
+
+volumes:
+  mongodb-data:
+  mosquitto-data:
+  mosquitto-log:

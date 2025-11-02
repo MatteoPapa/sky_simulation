@@ -1,0 +1,15 @@
+.venv
+logs/
+ops/
+run/
+__pycache__/
+.idea/
+*.whel
+*.whl
+kafka/myenv/
+_mosquitto/myenv/
+.idea/
+tinyfaas-*
+tinyFaaS/cmd/manager/rproxy-linux-amd64.bin
+tmp/
+pkg/docker/runtimes-*/
